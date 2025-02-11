@@ -10,6 +10,7 @@ import '../../../../common/styles/spacing_styles.dart';
 import '../../../../utils/constants/image_strings.dart';
 import '../../../../utils/constants/sizes.dart';
 import '../../../../utils/constants/text_strings.dart';
+import '../../../navigation_menu.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -83,7 +84,7 @@ class LoginScreen extends StatelessWidget {
                       SizedBox(
                         width: double.infinity,
                         child: ElevatedButton(
-                            onPressed: () {}, child: Text(TextStrings.signIn)),
+                            onPressed: () => Get.to(()=> NavigationMenu()), child: Text(TextStrings.signIn)),
                       ),
                       const SizedBox(height: AppSizes.spaceBtwItems),
                       SizedBox(

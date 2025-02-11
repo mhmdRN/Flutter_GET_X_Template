@@ -21,7 +21,7 @@ class OnBoardingController extends GetxController{
     print("testttttttttt ${currentPageIndex.value}");
     if(currentPageIndex.value == 2){
       //go to login screen
-      Get.offAll(const LoginScreen());
+      Get.offAll( ()=> const LoginScreen());
     }else{
       pageController.jumpTo(currentPageIndex.value - 1);
     }
