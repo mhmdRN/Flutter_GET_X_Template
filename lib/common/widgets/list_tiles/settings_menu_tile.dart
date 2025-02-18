@@ -14,6 +14,7 @@ class SettingsMenuTile extends StatelessWidget {
       this.trailing,
   });
 
+
   final String title,subTitle;
   final IconData icon;
   final Widget? trailing;
