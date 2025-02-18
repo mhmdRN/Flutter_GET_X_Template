@@ -1,5 +1,7 @@
+import "package:ecommerce_store/features/personalization/screens/settings/settings.dart";
 import "package:ecommerce_store/features/shop/screens/home/home.dart";
 import "package:ecommerce_store/features/shop/screens/store/store.dart";
+import "package:ecommerce_store/features/shop/screens/whishlist/whish_list.dart";
 import "package:ecommerce_store/utils/helpers/helper_functions.dart";
 import "package:flutter/material.dart";
 import "package:get/get.dart";
@@ -52,7 +54,7 @@ class NavigationMenu extends StatelessWidget {
 class NavigationController extends GetxController {
   final Rx<int> currentIndex = 0.obs;
 
-  final List<Widget> screens = [const HomeScreen(),const StoreScreen(),const StoreScreen(),const StoreScreen(),];
+  final List<Widget> screens = [const HomeScreen(),const StoreScreen(),const FavoriteScreen(), SettingsScreen(),];
   void setIndex(int index) {
     currentIndex.value = index;
   }

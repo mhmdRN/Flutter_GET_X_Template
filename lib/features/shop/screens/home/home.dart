@@ -3,6 +3,8 @@ import 'package:ecommerce_store/common/widgets/appbar/app_bar.dart';
 import 'package:ecommerce_store/common/widgets/layouts/grid_layout.dart';
 import 'package:ecommerce_store/features/shop/screens/home/widgets/circular_shape.dart';
 import 'package:ecommerce_store/features/shop/screens/home/widgets/curved_edges_widgets.dart';
+import 'package:ecommerce_store/features/shop/screens/home/widgets/home_categories.dart';
+import 'package:ecommerce_store/features/shop/screens/home/widgets/primary_header_container.dart';
 import 'package:ecommerce_store/features/shop/screens/home/widgets/promo_slider.dart';
 import 'package:ecommerce_store/features/shop/screens/home/widgets/section_heading.dart';
 import 'package:ecommerce_store/utils/constants/image_strings.dart';
@@ -25,69 +27,27 @@ class HomeScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            CurvedEdgesWidget(
-              widget: Container(
-                color: AppColors.primary,
-                padding: const EdgeInsets.all(0),
-                child: SizedBox(
-                  height: 400,
-                  child: Stack(
-                    children: [
-                      Positioned(top:-150,right: -250,child: CircularShape(backgroundColor: AppColors.textWhiteColor.withOpacity(0.1),)),
-                      Positioned(top:100,right: -300,child: CircularShape(backgroundColor: AppColors.textWhiteColor.withOpacity(0.1),)),
-                       Column(
-                        children: [
-                          const HomeAppBar(),
-                          const SizedBox(height: AppSizes.spaceBtwSections,),
-                          const SearchTextField(title: "Search in Store"),
-                          const SizedBox(height: AppSizes.spaceBtwSections,),
-                          Padding(padding: const EdgeInsets.only(left: AppSizes.defaultSpacing),
-                          child: Column(
-                            children: [
-                              Row(children: [
-                                Text('Popular Categories',style: Theme.of(context).textTheme.headlineSmall!.apply(color: AppColors.white), maxLines: 1,overflow: TextOverflow.ellipsis,),
-                                TextButton(onPressed: (){},child: const Text('f'),)
-                              ],),
-                              //categories
-                              SizedBox(
-                                height: 80,
-                                child: ListView.builder(
-                                    itemCount: 6,
-                                    scrollDirection: Axis.horizontal,
-                                    itemBuilder: (_,index){
-                                      return Padding(
-                                        padding: const EdgeInsets.only(right:AppSizes.spaceBtwItems),
-                                        child: Column(
-                                          children: [
-                                            Container(
-                                              width: 56,
-                                              height: 56,
-                                              padding: const EdgeInsets.all(AppSizes.sm),
-                                              decoration: BoxDecoration(
-                                                color: AppColors.white,
-                                                borderRadius: BorderRadius.circular(100)
-                                              ),
-                                              child: const Center(
-                                                child: Image(image: AssetImage(ImageStrings.onBoardingImage1),fit: BoxFit.cover,color: AppColors.dark),
-                                              ),
-                                            ),
-                                            const SizedBox(height: AppSizes.spaceBtwItems/2,),
-                                            Text('Box',style: Theme.of(context).textTheme.labelMedium!.apply(color: AppColors.white),),
-                                          ],
-                                        ),
-                                      );
-                                    }),
-                              )
-                            ],
-                          ),
-
-                          ),
-
-                        ],
-                      )
-                    ],
+            PrimaryHeaderContainer(
+              child: Column(
+                children: [
+                  const HomeAppBar(),
+                  const SizedBox(height: AppSizes.spaceBtwSections,),
+                  const SearchTextField(title: "Search in Store"),
+                  const SizedBox(height: AppSizes.spaceBtwSections,),
+                  Padding(padding: const EdgeInsets.only(left: AppSizes.defaultSpacing),
+                    child: Column(
+                      children: [
+                        Row(children: [
+                          Text('Popular Categories',style: Theme.of(context).textTheme.headlineSmall!.apply(color: AppColors.white), maxLines: 1,overflow: TextOverflow.ellipsis,),
+                          TextButton(onPressed: (){},child: const Text('f'),)
+                        ],),
+                        //categories
+                        HomeCategories()
+                      ],
+                    ),
                   ),
-                ),
+                  const SizedBox(height: AppSizes.spaceBtwSections,),
+                ],
               ),
             ),
             //carousel slider
