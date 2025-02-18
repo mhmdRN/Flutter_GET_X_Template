@@ -1,6 +1,5 @@
 
 
-import 'dart:ffi';
 
 import 'package:ecommerce_store/features/authentication/controllers/onboarding/onboarding_controller.dart';
 import 'package:ecommerce_store/utils/helpers/helper_functions.dart';
@@ -13,7 +12,7 @@ import '../../../../../utils/device/device_utility.dart';
 
 class OnBoardingDotNavigation extends StatelessWidget {
 
-   OnBoardingDotNavigation({
+   const OnBoardingDotNavigation({
     super.key,
   });
 

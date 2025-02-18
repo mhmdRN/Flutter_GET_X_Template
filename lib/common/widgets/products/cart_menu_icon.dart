@@ -21,9 +21,15 @@ class CartCounterIcon extends StatelessWidget {
         child: Container(
           width:18,
           height: 18,
-          decoration: BoxDecoration(color: AppColors.black, borderRadius: BorderRadius.circular(100),),
+          decoration: BoxDecoration(color: HelperFunctions.isDarkMode(context) ? AppColors.white : AppColors.black, borderRadius: BorderRadius.circular(100),),
           child: Center(
-            child: Text('2',style: Theme.of(context).textTheme.labelLarge!.apply(color: iconColor,fontSizeFactor: 0.8),),
+            child: Text(
+              '2',
+              style: Theme.of(context)
+                  .textTheme
+                  .labelLarge!
+                  .apply(color: HelperFunctions.isDarkMode(context) ? AppColors.black : AppColors.white, fontSizeFactor: 0.8),
+            ),
           ),
         ),
       )

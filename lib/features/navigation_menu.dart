@@ -1,6 +1,5 @@
 import "package:ecommerce_store/features/shop/screens/home/home.dart";
 import "package:ecommerce_store/features/shop/screens/store/store.dart";
-import "package:ecommerce_store/utils/device/device_utility.dart";
 import "package:ecommerce_store/utils/helpers/helper_functions.dart";
 import "package:flutter/material.dart";
 import "package:get/get.dart";
@@ -24,7 +23,7 @@ class NavigationMenu extends StatelessWidget {
           elevation: 0,
           indicatorColor: isDark ?  AppColors.white.withOpacity(0.1) : AppColors.black.withOpacity(0.1),
           backgroundColor: isDark ? AppColors.black : AppColors.white,
-          destinations: [
+          destinations: const [
             NavigationDestination(
               icon: Icon(Iconsax.home),
               label: "Home",
@@ -53,7 +52,7 @@ class NavigationMenu extends StatelessWidget {
 class NavigationController extends GetxController {
   final Rx<int> currentIndex = 0.obs;
 
-  final List<Widget> screens = [HomeScreen(),StoreScreen(),StoreScreen(),StoreScreen(),];
+  final List<Widget> screens = [const HomeScreen(),const StoreScreen(),const StoreScreen(),const StoreScreen(),];
   void setIndex(int index) {
     currentIndex.value = index;
   }

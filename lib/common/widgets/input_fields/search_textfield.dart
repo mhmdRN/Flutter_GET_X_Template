@@ -13,18 +13,20 @@ class SearchTextField extends StatelessWidget {
     this.icon = Iconsax.search_normal,
     this.showBackground = true,
     this.showBorder = true,
+    this.padding = const EdgeInsets.symmetric(horizontal: AppSizes.defaultSpacing)
   });
 
   final String title;
   final IconData? icon;
   final bool showBackground, showBorder;
+  final EdgeInsetsGeometry padding;
 
   @override
   Widget build(BuildContext context) {
     final isDark = HelperFunctions.isDarkMode(context);
 
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: AppSizes.defaultSpacing),
+      padding: padding,
       child: Container(
         width:DeviceUtils.getScreenWidth(),
         padding: const EdgeInsets.all(AppSizes.md),

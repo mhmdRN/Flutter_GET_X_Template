@@ -52,7 +52,7 @@ class PromoSlider extends StatelessWidget {
                     width: 20,
                     height: 4,
                     backgroundColor: controller.carouselCurrentIndex.value == i ? AppColors.black : AppColors.grey,
-                    margin: EdgeInsets.only(right: 10,bottom: 10),
+                    margin: const EdgeInsets.only(right: 10,bottom: 10),
                   ),
               ],
             ),

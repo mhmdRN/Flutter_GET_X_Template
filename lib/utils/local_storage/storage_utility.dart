@@ -17,7 +17,7 @@ class LocalStorage{
   }
 
   //Generic method to read data
-  dynamic? readData(String key) {
+  dynamic readData(String key) {
     return _storage.read<dynamic>(key);
   }
 

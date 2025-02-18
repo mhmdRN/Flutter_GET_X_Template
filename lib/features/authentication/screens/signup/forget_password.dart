@@ -14,13 +14,13 @@ class ForgetPasswordScreen extends StatelessWidget {
     return  Scaffold(
       appBar: AppBar(),
       body: Padding(
-        padding: EdgeInsets.all(AppSizes.defaultSpacing),
+        padding: const EdgeInsets.all(AppSizes.defaultSpacing),
         child: Column(
           children: [
             Text(TextStrings.forgetPasswordTitle,style: Theme.of(context).textTheme.headlineMedium, textAlign: TextAlign.center,),
-            SizedBox(height: AppSizes.spaceBtwItems,),
+            const SizedBox(height: AppSizes.spaceBtwItems,),
             Text(TextStrings.forgetPasswordSubTitle,style: Theme.of(context).textTheme.labelLarge, textAlign: TextAlign.center,),
-            SizedBox(height: AppSizes.spaceBtwSections * 2,),
+            const SizedBox(height: AppSizes.spaceBtwSections * 2,),
 
             TextFormField(
               expands: false,
@@ -32,8 +32,8 @@ class ForgetPasswordScreen extends StatelessWidget {
             SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                    onPressed: () => Get.off(() => ResetPasswordScreen()),
-                    child: Text(TextStrings.submit)),
+                    onPressed: () => Get.off(() => const ResetPasswordScreen()),
+                    child: const Text(TextStrings.submit)),
             ),
 
           ],

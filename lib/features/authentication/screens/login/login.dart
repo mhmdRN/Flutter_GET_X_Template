@@ -28,12 +28,12 @@ class LoginScreen extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Image(height: 100, image: AssetImage(ImageStrings.appLogo)),
+                  const Image(height: 100, image: AssetImage(ImageStrings.appLogo)),
                   Text(
                     TextStrings.loginTitle,
                     style: Theme.of(context).textTheme.headlineMedium,
                   ),
-                  SizedBox(height: AppSizes.sm),
+                  const SizedBox(height: AppSizes.sm),
                   Text(
                     TextStrings.loginSubTitle,
                     style: Theme.of(context).textTheme.bodyMedium,
@@ -76,7 +76,7 @@ class LoginScreen extends StatelessWidget {
                             ],
                           ),
                           TextButton(
-                              onPressed: () => Get.to(()=> ForgetPasswordScreen()),
+                              onPressed: () => Get.to(()=> const ForgetPasswordScreen()),
                               child: const Text(TextStrings.forgetPassword))
                         ],
                       ),
@@ -84,7 +84,7 @@ class LoginScreen extends StatelessWidget {
                       SizedBox(
                         width: double.infinity,
                         child: ElevatedButton(
-                            onPressed: () => Get.to(()=> NavigationMenu()), child: Text(TextStrings.signIn)),
+                            onPressed: () => Get.to(()=> const NavigationMenu()), child: const Text(TextStrings.signIn)),
                       ),
                       const SizedBox(height: AppSizes.spaceBtwItems),
                       SizedBox(
@@ -119,7 +119,7 @@ class LoginScreen extends StatelessWidget {
                 ],
               ),
 
-              SizedBox(height: AppSizes.spaceBtwSections,),
+              const SizedBox(height: AppSizes.spaceBtwSections,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -137,7 +137,7 @@ class LoginScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(width: AppSizes.spaceBtwItems,),
+                  const SizedBox(width: AppSizes.spaceBtwItems,),
                   Container(
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.grey),

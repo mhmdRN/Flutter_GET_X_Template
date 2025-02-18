@@ -1,9 +1,8 @@
+import 'package:ecommerce_store/common/widgets/products/brand_title_text_with_verified_icon.dart';
 import 'package:ecommerce_store/features/shop/screens/home/widgets/rounded_image.dart';
 import 'package:ecommerce_store/utils/constants/image_strings.dart';
 import 'package:ecommerce_store/utils/helpers/helper_functions.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../features/shop/screens/home/widgets/rounded_container.dart';
@@ -36,7 +35,7 @@ class ProductCardVertical extends StatelessWidget {
               backgroundColor: isDark ? AppColors.dark : AppColors.light,
               child: Stack(
                 children: [
-                  RoundedImage(imagePath: ImageStrings.banner1,height: 250,),
+                  const RoundedImage(imagePath: ImageStrings.banner1,height: 250,),
                   Positioned(
                     top:12,
                     child: RoundedContainer(
@@ -53,18 +52,15 @@ class ProductCardVertical extends StatelessWidget {
                 ],
               ),
             ),
-              SizedBox(height: AppSizes.spaceBtwItems / 2,),
-              Padding(padding: EdgeInsets.only(left: AppSizes.sm),
+              const SizedBox(height: AppSizes.spaceBtwItems / 2,),
+              const Padding(padding: EdgeInsets.only(left: AppSizes.sm),
               child: Column(
                 children: [
                   ProductTitleText(title:"Green Nike Air Shoes",smallSize: true,),
                   SizedBox(height: AppSizes.spaceBtwItems / 2,),
-                  Row(
-                    children: [
-                      Text('Nike', overflow: TextOverflow.ellipsis, maxLines: 1, style: Theme.of(context).textTheme.labelMedium),
-                      const SizedBox(width: AppSizes.xs),
-                      const Icon(Iconsax.verify5, color: AppColors.primary, size: AppSizes.xsIcon),
-                    ],
+                  BrandTitleWithVerifiedIcon(
+                    title: 'Nike',
+
                   ),
                  // SizedBox
                 ],
@@ -108,5 +104,7 @@ class ProductCardVertical extends StatelessWidget {
     );
   }
 }
+
+
 
 

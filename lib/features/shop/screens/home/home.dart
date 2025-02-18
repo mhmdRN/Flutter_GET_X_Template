@@ -1,18 +1,12 @@
 
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:ecommerce_store/common/widgets/appbar/app_bar.dart';
+import 'package:ecommerce_store/common/widgets/layouts/grid_layout.dart';
 import 'package:ecommerce_store/features/shop/screens/home/widgets/circular_shape.dart';
 import 'package:ecommerce_store/features/shop/screens/home/widgets/curved_edges_widgets.dart';
-import 'package:ecommerce_store/features/shop/screens/home/widgets/custom_curved_edges.dart';
 import 'package:ecommerce_store/features/shop/screens/home/widgets/promo_slider.dart';
-import 'package:ecommerce_store/features/shop/screens/home/widgets/rounded_image.dart';
 import 'package:ecommerce_store/features/shop/screens/home/widgets/section_heading.dart';
 import 'package:ecommerce_store/utils/constants/image_strings.dart';
-import 'package:ecommerce_store/utils/device/device_utility.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:iconsax/iconsax.dart';
 
 import '../../../../common/widgets/input_fields/search_textfield.dart';
 import '../../../../common/widgets/products/cart_menu_icon.dart';
@@ -43,10 +37,10 @@ class HomeScreen extends StatelessWidget {
                       Positioned(top:100,right: -300,child: CircularShape(backgroundColor: AppColors.textWhiteColor.withOpacity(0.1),)),
                        Column(
                         children: [
-                          HomeAppBar(),
-                          SizedBox(height: AppSizes.spaceBtwSections,),
-                          SearchTextField(title: "Search in Store"),
-                          SizedBox(height: AppSizes.spaceBtwSections,),
+                          const HomeAppBar(),
+                          const SizedBox(height: AppSizes.spaceBtwSections,),
+                          const SearchTextField(title: "Search in Store"),
+                          const SizedBox(height: AppSizes.spaceBtwSections,),
                           Padding(padding: const EdgeInsets.only(left: AppSizes.defaultSpacing),
                           child: Column(
                             children: [
@@ -62,7 +56,7 @@ class HomeScreen extends StatelessWidget {
                                     scrollDirection: Axis.horizontal,
                                     itemBuilder: (_,index){
                                       return Padding(
-                                        padding: EdgeInsets.only(right:AppSizes.spaceBtwItems),
+                                        padding: const EdgeInsets.only(right:AppSizes.spaceBtwItems),
                                         child: Column(
                                           children: [
                                             Container(
@@ -73,7 +67,7 @@ class HomeScreen extends StatelessWidget {
                                                 color: AppColors.white,
                                                 borderRadius: BorderRadius.circular(100)
                                               ),
-                                              child: Center(
+                                              child: const Center(
                                                 child: Image(image: AssetImage(ImageStrings.onBoardingImage1),fit: BoxFit.cover,color: AppColors.dark),
                                               ),
                                             ),
@@ -97,27 +91,15 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             //carousel slider
-            Padding(padding: EdgeInsets.all(AppSizes.defaultSpacing),
+            Padding(padding: const EdgeInsets.all(AppSizes.defaultSpacing),
               child: Column(
                 children: [
                   PromoSlider(),
-                  SizedBox(height: AppSizes.spaceBtwSections,),
+                  const SizedBox(height: AppSizes.spaceBtwSections,),
                   //Heading
                   SectionHeading(title: 'Popular Products',onPressed: (){},),
                   //GridView
-                  GridView.builder(
-                    itemCount: 4,
-                    physics: const NeverScrollableScrollPhysics(),
-                    shrinkWrap: true,
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,
-                    mainAxisSpacing: AppSizes.gridSpacing,
-                    crossAxisSpacing: AppSizes.gridSpacing,
-                    mainAxisExtent: 288,
-                  ),
-                      itemBuilder: (_, index) => ProductCardVertical(),
-                  ),
-
-
+                  GridLayout(itemCount: 4, itemBuilder: (_, index) => const ProductCardVertical())
                 ],
               ),
             ),

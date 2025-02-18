@@ -22,7 +22,6 @@ class CircularShape extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: child,
       width:width,
       height: height,
       margin: margin,
@@ -31,6 +30,7 @@ class CircularShape extends StatelessWidget {
         borderRadius: BorderRadius.circular(radius),
         color: backgroundColor,
       ),
+      child: child,
     );
   }
 }

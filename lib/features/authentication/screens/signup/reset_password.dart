@@ -16,7 +16,7 @@ class ResetPasswordScreen extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         actions: [
-          IconButton(onPressed: () => Get.back(), icon: Icon(CupertinoIcons.clear),)
+          IconButton(onPressed: () => Get.back(), icon: const Icon(CupertinoIcons.clear),)
         ],
       ),
       body: SingleChildScrollView(
@@ -25,25 +25,25 @@ class ResetPasswordScreen extends StatelessWidget {
           child: Column(
             children: [
               Image(
-                image: AssetImage(ImageStrings.appLogo),
+                image: const AssetImage(ImageStrings.appLogo),
                 width: DeviceUtils.getScreenWidth() * 0.6,
               ),
-              SizedBox(height: AppSizes.spaceBtwSections,),
+              const SizedBox(height: AppSizes.spaceBtwSections,),
               Text(TextStrings.changeYourPasswordTitle,style: Theme.of(context).textTheme.headlineMedium, textAlign: TextAlign.center,),
-              SizedBox(height: AppSizes.spaceBtwItems,),
+              const SizedBox(height: AppSizes.spaceBtwItems,),
               Text(TextStrings.changeYourPasswordSubTitle,style: Theme.of(context).textTheme.labelLarge, textAlign: TextAlign.center,),
-              SizedBox(height: AppSizes.spaceBtwSections,),
+              const SizedBox(height: AppSizes.spaceBtwSections,),
 
               SizedBox(
                 width:double.infinity,
-                child: ElevatedButton(onPressed: (){}, child: Text(TextStrings.done),),
+                child: ElevatedButton(onPressed: (){}, child: const Text(TextStrings.done),),
               ),
               const SizedBox(height: AppSizes.spaceBtwSections,),
               SizedBox(
                 width: double.infinity,
                 child: TextButton(
                   onPressed: () {},
-                  child: Text(TextStrings.resendEmail),),)
+                  child: const Text(TextStrings.resendEmail),),)
             ],
           ),
         ),
