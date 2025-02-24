@@ -1,9 +1,11 @@
 import 'package:ecommerce_store/common/widgets/appbar/app_bar.dart';
+import 'package:ecommerce_store/features/personalization/screens/profile/profile.dart';
 import 'package:ecommerce_store/features/shop/screens/home/widgets/circular_image.dart';
 import 'package:ecommerce_store/features/shop/screens/home/widgets/primary_header_container.dart';
 import 'package:ecommerce_store/features/shop/screens/home/widgets/section_heading.dart';
 import 'package:ecommerce_store/utils/constants/image_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../../common/widgets/list_tiles/settings_menu_tile.dart';
@@ -28,7 +30,7 @@ class SettingsScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: AppSizes.spaceBtwSections,),
                   // User Profile Card
-                  UserProfileTile(),
+                  UserProfileTile(onPressed: () =>  Get.to(() => ProfileScreen()),),
                   const SizedBox(height: AppSizes.spaceBtwSections,),
                 ],
               ),

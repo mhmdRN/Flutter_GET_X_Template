@@ -1,8 +1,10 @@
 import 'package:ecommerce_store/common/widgets/products/brand_title_text_with_verified_icon.dart';
 import 'package:ecommerce_store/features/shop/screens/home/widgets/rounded_image.dart';
+import 'package:ecommerce_store/features/shop/screens/product_details/product_details.dart';
 import 'package:ecommerce_store/utils/constants/image_strings.dart';
 import 'package:ecommerce_store/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../features/shop/screens/home/widgets/rounded_container.dart';
@@ -19,7 +21,7 @@ class ProductCardVertical extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDark = HelperFunctions.isDarkMode(context);
     return GestureDetector(
-      onTap: (){},
+      onTap: ()=> Get.to(() => ProductDetailScreen()),
       child: Container(
         width: 180,
         decoration: BoxDecoration(
